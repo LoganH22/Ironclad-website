@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
+import Reveal from "@/components/Reveal";
+import Eyebrow from "@/components/Eyebrow";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
@@ -12,11 +14,12 @@ export default function ContactPage() {
   return (
     <section className="py-20">
       <Container className="grid gap-12 md:grid-cols-2">
-        <div>
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+        <Reveal>
+          <Eyebrow>Get in touch</Eyebrow>
+          <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
             Let&apos;s talk.
           </h1>
-          <p className="mt-6 max-w-md text-lg text-muted-foreground">
+          <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
             Tell us a little about your business and what you&apos;re
             looking for. We&apos;ll get back to you to set up a
             conversation.
@@ -25,16 +28,16 @@ export default function ContactPage() {
             Prefer email?{" "}
             <a
               href="mailto:hello@ironcladconsultinggroup.com"
-              className="font-medium text-foreground underline"
+              className="font-medium text-ink underline underline-offset-2"
             >
               hello@ironcladconsultinggroup.com
             </a>
           </p>
-        </div>
+        </Reveal>
 
-        <div className="rounded-2xl border border-border bg-card p-8 shadow-sm">
+        <Reveal delay={100} className="border border-border bg-card p-8">
           <ContactForm />
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

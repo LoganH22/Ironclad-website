@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
+import { ArrowUpRightIcon } from "./icons";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -13,52 +14,62 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-muted">
-      <Container className="flex flex-col gap-8 py-12 md:flex-row md:items-start md:justify-between">
-        <div className="max-w-sm">
+    <footer className="border-t border-border bg-navy text-white/70">
+      <Container className="grid gap-10 py-16 md:grid-cols-[1.3fr_1fr_1fr]">
+        <div>
           <Link
             href="/"
-            className="flex items-center gap-2 font-heading text-base font-semibold text-foreground"
+            className="flex items-center gap-3 font-heading text-lg font-semibold text-white"
           >
             <Image
               src="/images/logo-badge.png"
               alt=""
               width={32}
               height={32}
-              className="rounded-md"
+              className="rounded-sm"
             />
             Ironclad Consulting Group
           </Link>
-          <p className="mt-3 text-sm text-muted-foreground">
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/50">
             Dependable financial and management consulting for businesses
             that want their numbers, and their next move, right.
           </p>
         </div>
 
-        <nav className="flex gap-6">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <div>
+          <div className="text-xs font-semibold uppercase tracking-[0.16em] text-white/40">
+            Navigate
+          </div>
+          <nav className="mt-4 flex flex-col gap-3">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="w-fit text-sm text-white/70 transition-colors duration-160 hover:text-white"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
 
-        <div className="text-sm text-muted-foreground">
+        <div>
+          <div className="text-xs font-semibold uppercase tracking-[0.16em] text-white/40">
+            Get in touch
+          </div>
           <a
             href="mailto:hello@ironcladconsultinggroup.com"
-            className="hover:text-foreground"
+            className="group mt-4 inline-flex items-center gap-1.5 text-sm text-white/70 transition-colors duration-160 hover:text-white"
           >
             hello@ironcladconsultinggroup.com
+            <ArrowUpRightIcon className="size-3.5 transition-transform duration-220 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
+          <p className="mt-4 text-sm text-white/50">Pennsylvania, USA</p>
         </div>
       </Container>
 
-      <Container className="border-t border-border py-6">
-        <p className="text-xs text-muted-foreground">
+      <Container className="border-t border-white/10 py-6">
+        <p className="text-xs text-white/40">
           © {year} Ironclad Consulting Group, LLC. All rights reserved.
         </p>
       </Container>

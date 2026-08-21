@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/Container";
+import Reveal from "@/components/Reveal";
+import Button from "@/components/Button";
+import Eyebrow from "@/components/Eyebrow";
 import {
-  ArrowRightIcon,
   ChartIcon,
   CalculatorIcon,
   ShieldIcon,
@@ -115,32 +117,33 @@ const TIERS = [
 export default function ServicesPage() {
   return (
     <>
-      <section className="relative overflow-hidden border-b border-border bg-brand py-24">
-        <div className="pointer-events-none absolute -top-32 right-0 size-96 rounded-full bg-accent/20 blur-3xl" />
-        <Container className="relative">
-          <h1 className="text-4xl font-semibold tracking-tight text-brand-foreground sm:text-5xl">
-            Services
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-brand-foreground/80">
-            Four core services designed to give you a clear financial
-            picture and a steady hand on management decisions.
-          </p>
+      <section className="border-b border-border bg-navy py-24">
+        <Container>
+          <Reveal>
+            <Eyebrow light>What we offer</Eyebrow>
+            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              Services
+            </h1>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/70">
+              Four core services designed to give you a clear financial
+              picture and a steady hand on management decisions.
+            </p>
+          </Reveal>
         </Container>
       </section>
 
       <section className="py-20">
         <Container className="space-y-16">
           {SERVICES.map(({ icon: Icon, title, description, items }, i) => (
-            <div
+            <Reveal
               key={title}
+              delay={i * 40}
               className="grid gap-8 border-b border-border pb-16 last:border-none last:pb-0 md:grid-cols-[auto_1fr] md:gap-12"
             >
               <div className="flex items-start gap-4 md:w-64">
-                <div className="flex size-14 shrink-0 items-center justify-center rounded-lg bg-primary/5 text-primary">
-                  <Icon className="size-7" />
-                </div>
+                <Icon className="mt-1 size-8 shrink-0 text-brass" />
                 <div>
-                  <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  <span className="font-tabular text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                     0{i + 1}
                   </span>
                   <h2 className="text-2xl font-semibold text-foreground">
@@ -156,21 +159,22 @@ export default function ServicesPage() {
                 <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                   {items.map((item) => (
                     <li key={item} className="flex items-start gap-3">
-                      <CheckIcon className="mt-0.5 size-5 shrink-0 text-accent" />
+                      <CheckIcon className="mt-0.5 size-5 shrink-0 text-brass" />
                       <span className="text-sm text-foreground">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-            </div>
+            </Reveal>
           ))}
         </Container>
       </section>
 
       <section className="border-t border-border bg-muted/40 py-20">
         <Container>
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold tracking-tight text-foreground">
+          <Reveal className="max-w-2xl">
+            <Eyebrow>Investment</Eyebrow>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-foreground">
               Straightforward pricing
             </h2>
             <p className="mt-4 text-muted-foreground">
@@ -178,36 +182,34 @@ export default function ServicesPage() {
               percentage of revenue. Each tier includes everything in the one
               before it.
             </p>
-          </div>
+          </Reveal>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {TIERS.map((tier) => (
-              <div
+            {TIERS.map((tier, i) => (
+              <Reveal
                 key={tier.metal}
-                className="relative overflow-hidden rounded-2xl border border-border bg-card p-8 shadow-sm"
+                delay={i * 60}
+                className="relative flex flex-col border border-border bg-card p-8"
               >
                 <div
-                  className="absolute inset-x-0 top-0 h-1.5"
+                  className="absolute inset-x-0 top-0 h-1"
                   style={{ backgroundColor: tier.accent }}
                 />
 
                 <span
-                  className="inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide"
-                  style={{
-                    color: tier.accent,
-                    backgroundColor: `${tier.accent}1A`,
-                  }}
+                  className="w-fit text-xs font-bold uppercase tracking-[0.16em]"
+                  style={{ color: tier.accent }}
                 >
                   {tier.metal}
                 </span>
-                <h3 className="mt-4 font-heading text-2xl font-semibold text-foreground">
+                <h3 className="mt-3 font-heading text-2xl font-semibold text-foreground">
                   {tier.name}
                 </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {tier.description}
                 </p>
 
-                <div className="mt-6 rounded-xl bg-muted p-4">
+                <div className="mt-6 border-y border-border py-4">
                   <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                     {tier.cadence}
                   </div>
@@ -216,20 +218,14 @@ export default function ServicesPage() {
                       {tier.bands.map((band) => (
                         <div
                           key={band.label}
-                          className="flex items-baseline justify-between rounded-lg px-2.5 py-1.5"
-                          style={
-                            band.typical
-                              ? {
-                                  backgroundColor: `${tier.accent}14`,
-                                  boxShadow: `inset 0 0 0 1px ${tier.accent}40`,
-                                }
-                              : undefined
-                          }
+                          className={`flex items-baseline justify-between px-2.5 py-1.5 ${
+                            band.typical ? "bg-muted" : ""
+                          }`}
                         >
                           <span className="text-xs text-muted-foreground">
                             {band.label}
                           </span>
-                          <span className="font-heading text-sm font-semibold text-foreground">
+                          <span className="font-heading font-tabular text-sm font-semibold text-foreground">
                             {band.value}
                           </span>
                         </div>
@@ -261,16 +257,13 @@ export default function ServicesPage() {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
 
           <p className="mt-8 text-sm text-muted-foreground">
             Exact pricing depends on your transaction volume and complexity.{" "}
-            <Link
-              href="/contact"
-              className="font-medium text-foreground underline underline-offset-2"
-            >
+            <Link href="/contact" className="font-medium text-ink underline underline-offset-2">
               Reach out
             </Link>{" "}
             for a quote scoped to your business.
@@ -279,25 +272,27 @@ export default function ServicesPage() {
       </section>
 
       <section className="border-t border-border py-20">
-        <Container className="relative overflow-hidden rounded-2xl bg-brand px-8 py-16">
-          <div className="pointer-events-none absolute -top-24 right-0 size-72 rounded-full bg-accent/20 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-24 left-0 size-72 rounded-full bg-accent/10 blur-3xl" />
-          <div className="relative flex flex-col items-center gap-6 text-center">
-            <h2 className="text-3xl font-semibold tracking-tight text-brand-foreground">
-              Not sure which service fits?
-            </h2>
-            <p className="max-w-xl text-brand-foreground/80">
-              Most engagements start with a conversation, not a proposal.
-              Let&apos;s talk about where your business is today.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-all hover:opacity-90 hover:shadow-accent/30 cursor-pointer"
-            >
-              Get a Consultation
-              <ArrowRightIcon />
-            </Link>
-          </div>
+        <Container>
+          <Reveal className="relative overflow-hidden bg-navy px-8 py-16 sm:px-16">
+            <div
+              aria-hidden="true"
+              className="absolute top-0 left-0 h-16 w-16 border-t border-l border-brass/60"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute bottom-0 right-0 h-16 w-16 border-b border-r border-brass/60"
+            />
+            <div className="relative flex flex-col items-center gap-6 text-center">
+              <h2 className="text-3xl font-semibold tracking-tight text-white">
+                Not sure which service fits?
+              </h2>
+              <p className="max-w-xl text-white/70">
+                Most engagements start with a conversation, not a proposal.
+                Let&apos;s talk about where your business is today.
+              </p>
+              <Button href="/contact">Get a Consultation</Button>
+            </div>
+          </Reveal>
         </Container>
       </section>
     </>

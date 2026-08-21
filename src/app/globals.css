@@ -1,32 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #0f172a;
-  --color-primary-foreground: #ffffff;
-  --color-brand: #0f172a;
-  --color-brand-foreground: #ffffff;
-  --color-secondary: #1e293b;
-  --color-accent: #16a34a;
-  --color-accent-foreground: #ffffff;
-  --color-background: #ffffff;
-  --color-foreground: #0f172a;
+  --color-ink: #14181f;
+  --color-navy: #0e1524;
+  --color-navy-soft: #1a2338;
+  --color-brass: #a8611d;
+  --color-brass-soft: #c17a35;
+  --color-on-brass: #fffaf3;
+  --color-paper: #faf8f4;
+  --color-foreground: #1c1917;
   --color-card: #ffffff;
-  --color-card-foreground: #0f172a;
-  --color-muted: #f1f5f9;
-  --color-muted-foreground: #475569;
-  --color-border: #e2e8f0;
-  --color-ring: #0f172a;
+  --color-card-foreground: #1c1917;
+  --color-muted: #f0ece3;
+  --color-muted-foreground: #57534e;
+  --color-border: #e3ded2;
+  --color-ring: #0e1524;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --duration-fast: 160ms;
+  --duration-base: 220ms;
+  --duration-reveal: 600ms;
 }
 
 @theme inline {
-  --color-primary: var(--color-primary);
-  --color-primary-foreground: var(--color-primary-foreground);
-  --color-brand: var(--color-brand);
-  --color-brand-foreground: var(--color-brand-foreground);
-  --color-secondary: var(--color-secondary);
-  --color-accent: var(--color-accent);
-  --color-accent-foreground: var(--color-accent-foreground);
-  --color-background: var(--color-background);
+  --color-ink: var(--color-ink);
+  --color-navy: var(--color-navy);
+  --color-navy-soft: var(--color-navy-soft);
+  --color-brass: var(--color-brass);
+  --color-brass-soft: var(--color-brass-soft);
+  --color-on-brass: var(--color-on-brass);
+  --color-paper: var(--color-paper);
+  --color-background: var(--color-paper);
   --color-foreground: var(--color-foreground);
   --color-card: var(--color-card);
   --color-card-foreground: var(--color-card-foreground);
@@ -34,12 +39,12 @@
   --color-muted-foreground: var(--color-muted-foreground);
   --color-border: var(--color-border);
   --color-ring: var(--color-ring);
-  --font-sans: var(--font-ibm-plex-sans);
-  --font-heading: var(--font-fraunces);
+  --font-sans: var(--font-public-sans);
+  --font-heading: var(--font-newsreader);
 }
 
 body {
-  background: var(--color-background);
+  background: var(--color-paper);
   color: var(--color-foreground);
   font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
@@ -49,9 +54,41 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--font-heading), var(--font-sans), serif;
   font-optical-sizing: auto;
+}
+
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 2px;
+}
+
+/* Scroll reveal: gated behind data-visible, driven by the useInView hook. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity var(--duration-reveal) var(--ease-out),
+    transform var(--duration-reveal) var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal="visible"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    transform: none;
+    transition: opacity var(--duration-base) ease;
+  }
 }
 
 @keyframes hero-zoom {
@@ -59,6 +96,6 @@ h2 {
     transform: scale(1);
   }
   to {
-    transform: scale(1.08);
+    transform: scale(1.06);
   }
 }

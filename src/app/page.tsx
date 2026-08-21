@@ -1,12 +1,14 @@
 import Image from "next/image";
-import Link from "next/link";
 import Container from "@/components/Container";
+import Reveal from "@/components/Reveal";
+import Button from "@/components/Button";
+import Eyebrow from "@/components/Eyebrow";
 import {
-  ArrowRightIcon,
   ChartIcon,
   CalculatorIcon,
   CompassIcon,
   ShieldIcon,
+  QuoteIcon,
 } from "@/components/icons";
 
 const SERVICES = [
@@ -56,161 +58,159 @@ const PROOF_POINTS = [
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden bg-[#020617]">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero-wave.jpg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover opacity-70 motion-safe:animate-[hero-zoom_24s_ease-out_infinite_alternate]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/95 via-[#020617]/75 to-[#020617]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/90 via-transparent to-transparent" />
-        </div>
-
-        <Container className="relative py-28 md:py-36">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-slate-200">
-              <ShieldIcon className="size-4 text-accent" />
-              Financial &amp; Management Consulting
-            </span>
-            <h1 className="mt-6 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
-              Financial guidance as solid <span className="text-accent">as the name.</span>
+      <section className="border-b border-border bg-navy">
+        <Container className="grid gap-12 py-20 md:grid-cols-2 md:items-center md:py-28">
+          <Reveal>
+            <Eyebrow light>Financial &amp; Management Consulting</Eyebrow>
+            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
+              Financial guidance as solid{" "}
+              <span className="italic text-brass-soft">as the name.</span>
             </h1>
-            <p className="mt-6 max-w-lg text-lg text-slate-300">
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/70">
               Ironclad Consulting Group helps growing businesses track cash
               flow, build real budgets, understand what they&apos;re worth,
               and make sound management decisions.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-all hover:opacity-90 hover:shadow-accent/30 cursor-pointer"
-              >
-                Get a Consultation
-                <ArrowRightIcon />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 cursor-pointer"
-              >
+            <div className="mt-9 flex flex-wrap gap-4">
+              <Button href="/contact">Get a Consultation</Button>
+              <Button href="/services" variant="outline-light" withArrow={false}>
                 Our Services
-              </Link>
+              </Button>
             </div>
-          </div>
+          </Reveal>
+
+          <Reveal delay={120} className="relative">
+            <div className="relative ml-auto aspect-[4/5] w-full max-w-md overflow-hidden border border-white/15">
+              <Image
+                src="/images/hero-wave.jpg"
+                alt=""
+                fill
+                priority
+                sizes="(min-width: 768px) 28rem, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent" />
+            </div>
+            <div
+              aria-hidden="true"
+              className="absolute -bottom-4 -left-4 hidden h-16 w-16 border-b border-l border-brass/60 md:block"
+            />
+          </Reveal>
         </Container>
       </section>
 
-      <section className="py-20">
-        <Container className="max-w-2xl text-center sm:mx-auto">
-          <h2 className="text-3xl font-semibold tracking-tight text-foreground">
-            Where does your business stand financially?
-          </h2>
-          <p className="mt-4 text-muted-foreground">
-            Most growing businesses are flying without a real financial
-            picture, reacting to problems instead of seeing them coming
-            months out. A clear system changes that.
-          </p>
+      <section className="py-24">
+        <Container narrow>
+          <Reveal className="text-center">
+            <QuoteIcon className="mx-auto size-8 text-brass" />
+            <h2 className="mt-6 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+              Where does your business stand financially?
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+              Most growing businesses are flying without a real financial
+              picture, reacting to problems instead of seeing them coming
+              months out. A clear system changes that.
+            </p>
+          </Reveal>
         </Container>
       </section>
 
-      <section className="relative overflow-hidden bg-[#020617] py-24">
+      <section className="relative overflow-hidden bg-navy py-24">
         <div className="absolute inset-0">
           <Image
             src="/images/hero-review.jpg"
             alt=""
             fill
             sizes="100vw"
-            className="object-cover opacity-40"
+            className="object-cover opacity-25"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/95 via-[#0f172a]/85 to-[#020617]/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy-soft/90 to-navy/95" />
         </div>
 
         <Container className="relative">
-          <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Financial clarity shouldn&apos;t be complicated.
-          </h2>
+          <Reveal>
+            <Eyebrow light>How we work</Eyebrow>
+            <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+              Financial clarity shouldn&apos;t be complicated.
+            </h2>
+          </Reveal>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
-            {PROOF_POINTS.map(({ headline, description }) => (
-              <div
-                key={headline}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md"
-              >
-                <span className="font-heading text-3xl font-semibold text-white">
+          <div className="mt-14 grid gap-10 sm:grid-cols-3 sm:divide-x sm:divide-white/10">
+            {PROOF_POINTS.map(({ headline, description }, i) => (
+              <Reveal key={headline} delay={i * 60} className="sm:px-8 first:sm:pl-0">
+                <span className="font-heading text-4xl font-semibold text-white">
                   {headline}
                 </span>
-                <div className="mt-3 mb-4 h-0.5 w-10 bg-accent" />
-                <p className="text-sm text-slate-300">{description}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <section className="border-b border-border py-20">
-        <Container>
-          <div className="max-w-2xl">
-            <h2 className="text-3xl font-semibold tracking-tight text-foreground">
-              What we do
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              Four core services, all built to give you a clearer picture and
-              a firmer footing.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {SERVICES.map(({ icon: Icon, title, description }) => (
-              <div
-                key={title}
-                className="group rounded-xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5"
-              >
-                <div className="flex size-12 items-center justify-center rounded-lg bg-primary/5 text-primary transition-colors group-hover:bg-accent/10 group-hover:text-accent">
-                  <Icon className="size-6" />
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-foreground">
-                  {title}
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground">
+                <div className="mt-4 mb-4 h-px w-10 bg-brass" />
+                <p className="text-sm leading-relaxed text-white/60">
                   {description}
                 </p>
-              </div>
+              </Reveal>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="py-20">
-        <Container className="relative overflow-hidden rounded-2xl bg-brand px-8 py-16">
-          <div className="pointer-events-none absolute -top-24 right-0 size-72 rounded-full bg-accent/20 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-24 left-0 size-72 rounded-full bg-accent/10 blur-3xl" />
-          <div className="relative flex flex-col items-center gap-6 text-center">
-            <h2 className="text-3xl font-semibold tracking-tight text-brand-foreground">
-              Ready for a clearer financial picture?
+      <section className="border-b border-border py-24">
+        <Container>
+          <Reveal className="max-w-2xl">
+            <Eyebrow>What we do</Eyebrow>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-foreground">
+              Four core services, one steady footing.
             </h2>
-            <p className="max-w-xl text-brand-foreground/80">
-              Tell us where your business stands today, and we&apos;ll help
-              you figure out the next right move.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-all hover:opacity-90 hover:shadow-accent/30 cursor-pointer"
+          </Reveal>
+
+          <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2">
+            {SERVICES.map(({ icon: Icon, title, description }, i) => (
+              <Reveal
+                key={title}
+                delay={i * 60}
+                className="group border-t border-border pt-6"
               >
-                Get a Consultation
-                <ArrowRightIcon />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-brand-foreground transition-colors hover:bg-white/10 cursor-pointer"
-              >
-                See our services
-              </Link>
-            </div>
+                <div className="flex items-start gap-4">
+                  <Icon className="mt-1 size-6 shrink-0 text-brass" />
+                  <div>
+                    <h3 className="font-heading text-xl font-semibold text-foreground">
+                      {title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {description}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
+        </Container>
+      </section>
+
+      <section className="py-24">
+        <Container>
+          <Reveal className="relative overflow-hidden bg-navy px-8 py-16 sm:px-16">
+            <div
+              aria-hidden="true"
+              className="absolute top-0 left-0 h-16 w-16 border-t border-l border-brass/60"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute bottom-0 right-0 h-16 w-16 border-b border-r border-brass/60"
+            />
+            <div className="relative flex flex-col items-center gap-6 text-center">
+              <h2 className="text-3xl font-semibold tracking-tight text-white">
+                Ready for a clearer financial picture?
+              </h2>
+              <p className="max-w-xl text-white/70">
+                Tell us where your business stands today, and we&apos;ll help
+                you figure out the next right move.
+              </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button href="/contact">Get a Consultation</Button>
+                <Button href="/services" variant="outline-light" withArrow={false}>
+                  See our services
+                </Button>
+              </div>
+            </div>
+          </Reveal>
         </Container>
       </section>
     </>

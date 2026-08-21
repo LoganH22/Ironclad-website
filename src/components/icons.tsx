@@ -149,6 +149,42 @@ export function MenuIcon({ className = "size-6" }: IconProps) {
   );
 }
 
+export function ArrowUpRightIcon({ className = "size-4" }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M7 17L17 7" />
+      <path d="M8 7h9v9" />
+    </svg>
+  );
+}
+
+export function QuoteIcon({ className = "size-6" }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M8 8a3 3 0 0 0-3 3v2a2 2 0 0 0 2 2h1v3a3 3 0 0 1-3 3" />
+      <path d="M17 8a3 3 0 0 0-3 3v2a2 2 0 0 0 2 2h1v3a3 3 0 0 1-3 3" />
+    </svg>
+  );
+}
+
 export function CloseIcon({ className = "size-6" }: IconProps) {
   return (
     <svg

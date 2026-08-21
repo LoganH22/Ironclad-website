@@ -35,7 +35,7 @@ export default function ContactForm() {
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="mt-2 block w-full rounded-md border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+          className="mt-2 block w-full border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground transition-colors duration-160 focus:outline-none focus:ring-2 focus:ring-brass"
           placeholder="Your name"
         />
       </div>
@@ -54,7 +54,7 @@ export default function ContactForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="mt-2 block w-full rounded-md border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+          className="mt-2 block w-full border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground transition-colors duration-160 focus:outline-none focus:ring-2 focus:ring-brass"
           placeholder="you@company.com"
         />
       </div>
@@ -73,14 +73,14 @@ export default function ContactForm() {
           rows={5}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="mt-2 block w-full resize-none rounded-md border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+          className="mt-2 block w-full resize-none border border-border bg-background px-4 py-2.5 text-foreground placeholder:text-muted-foreground transition-colors duration-160 focus:outline-none focus:ring-2 focus:ring-brass"
           placeholder="Tell us a bit about your business and what you need."
         />
       </div>
 
       <button
         type="submit"
-        className="w-full rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90 cursor-pointer sm:w-auto"
+        className="w-full bg-brass px-6 py-3 text-sm font-semibold text-on-brass transition-colors duration-160 hover:bg-brass-soft cursor-pointer sm:w-auto"
       >
         Send message
       </button>
@@ -91,7 +91,7 @@ export default function ContactForm() {
           open, email us directly at{" "}
           <a
             href="mailto:hello@ironcladconsultinggroup.com"
-            className="font-medium text-foreground underline"
+            className="font-medium text-ink underline underline-offset-2"
           >
             hello@ironcladconsultinggroup.com
           </a>
