@@ -76,8 +76,8 @@ const TIERS = [
     includesLabel: "What's included",
     includes: ["Full books cleanup & reconciliation", "Initial budget build"],
     bands: [
-      { label: "Low (<50 tx/mo)", value: "$600–800" },
-      { label: "Medium (50–250 tx/mo)", value: "$1,200", typical: true },
+      { label: "Low (<50 tx/mo)", value: "$600–1,200" },
+      { label: "Medium (50–250 tx/mo)", value: "$1,200–2,000", typical: true },
       { label: "High (250+ tx/mo)", value: "$2,000+" },
     ],
   },
@@ -96,8 +96,8 @@ const TIERS = [
       "Quarterly check-ins",
     ],
     bands: [
-      { label: "Low (<50 tx/mo)", value: "$800–1,000" },
-      { label: "Medium (50–250 tx/mo)", value: "$1,600/mo", typical: true },
+      { label: "Low (<50 tx/mo)", value: "$800–1,600" },
+      { label: "Medium (50–250 tx/mo)", value: "$1,600–2,200", typical: true },
       { label: "High (250+ tx/mo)", value: "$2,200–2,800" },
     ],
   },
