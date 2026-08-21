@@ -66,10 +66,10 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="scale-110 object-cover opacity-20 blur-[2px]"
+            className="scale-110 object-cover opacity-35 blur-[1px]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/80" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/30" />
         </div>
 
         <Container className="relative py-24 md:py-32">
@@ -117,9 +117,9 @@ export default function Home() {
             alt=""
             fill
             sizes="100vw"
-            className="scale-110 object-cover opacity-15 blur-[2px]"
+            className="scale-110 object-cover opacity-30 blur-[1px]"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy-soft/90 to-navy/95" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy-soft/75 to-navy/90" />
         </div>
 
         <Container className="relative">
