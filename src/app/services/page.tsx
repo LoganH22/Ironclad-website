@@ -1,0 +1,305 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Container from "@/components/Container";
+import {
+  ArrowRightIcon,
+  ChartIcon,
+  CalculatorIcon,
+  ShieldIcon,
+  CompassIcon,
+  CheckIcon,
+} from "@/components/icons";
+
+export const metadata: Metadata = {
+  title: "Services | Ironclad Consulting Group",
+  description:
+    "Cash flow tracking, budget building, business valuation, and management advisory services from Ironclad Consulting Group.",
+};
+
+const SERVICES = [
+  {
+    icon: ChartIcon,
+    title: "Cash Flow Tracking",
+    description:
+      "You can't manage what you can't see. We set up clear, ongoing tracking of cash in and cash out so you always know where you stand.",
+    items: [
+      "Cash flow statements built around your business",
+      "Early warning on shortfalls before they happen",
+      "Regular reporting cadence, not once-a-year surprises",
+    ],
+  },
+  {
+    icon: CalculatorIcon,
+    title: "Budget Building",
+    description:
+      "A budget only works if it matches reality. We build budgets from how your business actually operates, not a generic template.",
+    items: [
+      "Realistic revenue and expense projections",
+      "Department or project-level breakdowns",
+      "Regular budget-vs-actual check-ins",
+    ],
+  },
+  {
+    icon: ShieldIcon,
+    title: "Business Valuation",
+    description:
+      "Whether you're raising capital, bringing on a partner, or planning an exit, you need a number you can stand behind.",
+    items: [
+      "Defensible valuation methodology",
+      "Support for financing or partnership conversations",
+      "Clear explanation of what drives your number",
+    ],
+  },
+  {
+    icon: CompassIcon,
+    title: "Management Advisory",
+    description:
+      "Hands-on advice on the operating decisions that shape your business, from an outside perspective that isn't guessing.",
+    items: [
+      "Ongoing advisory relationship, not one-off reports",
+      "Practical recommendations, not just analysis",
+      "Support through key decision points",
+    ],
+  },
+];
+
+const TIERS = [
+  {
+    metal: "Bronze",
+    accent: "#96603D",
+    name: "Foundation",
+    cadence: "One-time",
+    description:
+      "A one-time books cleanup and working budget — gets a disorganized set of books into shape.",
+    includesLabel: "What's included",
+    includes: ["Full books cleanup & reconciliation", "Initial budget build"],
+    bands: [
+      { label: "Low (<50 tx/mo)", value: "$600–800" },
+      { label: "Medium (50–250 tx/mo)", value: "$1,200", typical: true },
+      { label: "High (250+ tx/mo)", value: "$2,000+" },
+    ],
+  },
+  {
+    metal: "Silver",
+    accent: "#64748B",
+    name: "Growth",
+    cadence: "Monthly",
+    description:
+      "Foundation, plus ongoing bookkeeping and monthly visibility into the business.",
+    includesLabel: "Everything in Bronze, plus",
+    includes: [
+      "Ongoing weekly/monthly bookkeeping",
+      "Monthly financial reporting (P&L)",
+      "Cash flow tracking",
+      "Quarterly check-ins",
+    ],
+    bands: [
+      { label: "Low (<50 tx/mo)", value: "$800–1,000" },
+      { label: "Medium (50–250 tx/mo)", value: "$1,600/mo", typical: true },
+      { label: "High (250+ tx/mo)", value: "$2,200–2,800" },
+    ],
+  },
+  {
+    metal: "Gold",
+    accent: "#B45309",
+    name: "Strategic",
+    cadence: "Custom",
+    description:
+      "Growth, plus the big-decision work: what the business is worth and where it's headed.",
+    includesLabel: "Everything in Silver, plus",
+    includes: ["Business valuation", "Growth planning", "Sale / acquisition advisory"],
+    bands: null,
+  },
+];
+
+export default function ServicesPage() {
+  return (
+    <>
+      <section className="relative overflow-hidden border-b border-border bg-brand py-24">
+        <div className="pointer-events-none absolute -top-32 right-0 size-96 rounded-full bg-accent/20 blur-3xl" />
+        <Container className="relative">
+          <h1 className="text-4xl font-semibold tracking-tight text-brand-foreground sm:text-5xl">
+            Services
+          </h1>
+          <p className="mt-4 max-w-2xl text-lg text-brand-foreground/80">
+            Four core services designed to give you a clear financial
+            picture and a steady hand on management decisions.
+          </p>
+        </Container>
+      </section>
+
+      <section className="py-20">
+        <Container className="space-y-16">
+          {SERVICES.map(({ icon: Icon, title, description, items }, i) => (
+            <div
+              key={title}
+              className="grid gap-8 border-b border-border pb-16 last:border-none last:pb-0 md:grid-cols-[auto_1fr] md:gap-12"
+            >
+              <div className="flex items-start gap-4 md:w-64">
+                <div className="flex size-14 shrink-0 items-center justify-center rounded-lg bg-primary/5 text-primary">
+                  <Icon className="size-7" />
+                </div>
+                <div>
+                  <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    0{i + 1}
+                  </span>
+                  <h2 className="text-2xl font-semibold text-foreground">
+                    {title}
+                  </h2>
+                </div>
+              </div>
+
+              <div>
+                <p className="max-w-2xl text-muted-foreground">
+                  {description}
+                </p>
+                <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {items.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <CheckIcon className="mt-0.5 size-5 shrink-0 text-accent" />
+                      <span className="text-sm text-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </Container>
+      </section>
+
+      <section className="border-t border-border bg-muted/40 py-20">
+        <Container>
+          <div className="max-w-2xl">
+            <h2 className="text-3xl font-semibold tracking-tight text-foreground">
+              Straightforward pricing
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Three tiers, priced by transaction volume and complexity, not a
+              percentage of revenue. Each tier includes everything in the one
+              before it.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {TIERS.map((tier) => (
+              <div
+                key={tier.metal}
+                className="relative overflow-hidden rounded-2xl border border-border bg-card p-8 shadow-sm"
+              >
+                <div
+                  className="absolute inset-x-0 top-0 h-1.5"
+                  style={{ backgroundColor: tier.accent }}
+                />
+
+                <span
+                  className="inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide"
+                  style={{
+                    color: tier.accent,
+                    backgroundColor: `${tier.accent}1A`,
+                  }}
+                >
+                  {tier.metal}
+                </span>
+                <h3 className="mt-4 font-heading text-2xl font-semibold text-foreground">
+                  {tier.name}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {tier.description}
+                </p>
+
+                <div className="mt-6 rounded-xl bg-muted p-4">
+                  <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                    {tier.cadence}
+                  </div>
+                  {tier.bands ? (
+                    <div className="mt-3 space-y-1.5">
+                      {tier.bands.map((band) => (
+                        <div
+                          key={band.label}
+                          className="flex items-baseline justify-between rounded-lg px-2.5 py-1.5"
+                          style={
+                            band.typical
+                              ? {
+                                  backgroundColor: `${tier.accent}14`,
+                                  boxShadow: `inset 0 0 0 1px ${tier.accent}40`,
+                                }
+                              : undefined
+                          }
+                        >
+                          <span className="text-xs text-muted-foreground">
+                            {band.label}
+                          </span>
+                          <span className="font-heading text-sm font-semibold text-foreground">
+                            {band.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="mt-2 text-sm text-foreground">
+                      Scoped individually based on your business —
+                      let&apos;s talk.
+                    </p>
+                  )}
+                </div>
+
+                <div className="mt-6">
+                  <div className="text-xs font-semibold uppercase tracking-wide text-foreground">
+                    {tier.includesLabel}
+                  </div>
+                  <ul className="mt-3 space-y-2.5">
+                    {tier.includes.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5">
+                        <span
+                          className="mt-0.5 shrink-0"
+                          style={{ color: tier.accent }}
+                        >
+                          <CheckIcon className="size-4" />
+                        </span>
+                        <span className="text-sm text-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-8 text-sm text-muted-foreground">
+            Exact pricing depends on your transaction volume and complexity.{" "}
+            <Link
+              href="/contact"
+              className="font-medium text-foreground underline underline-offset-2"
+            >
+              Reach out
+            </Link>{" "}
+            for a quote scoped to your business.
+          </p>
+        </Container>
+      </section>
+
+      <section className="border-t border-border py-20">
+        <Container className="relative overflow-hidden rounded-2xl bg-brand px-8 py-16">
+          <div className="pointer-events-none absolute -top-24 right-0 size-72 rounded-full bg-accent/20 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 left-0 size-72 rounded-full bg-accent/10 blur-3xl" />
+          <div className="relative flex flex-col items-center gap-6 text-center">
+            <h2 className="text-3xl font-semibold tracking-tight text-brand-foreground">
+              Not sure which service fits?
+            </h2>
+            <p className="max-w-xl text-brand-foreground/80">
+              Most engagements start with a conversation, not a proposal.
+              Let&apos;s talk about where your business is today.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-all hover:opacity-90 hover:shadow-accent/30 cursor-pointer"
+            >
+              Get a Consultation
+              <ArrowRightIcon />
+            </Link>
+          </div>
+        </Container>
+      </section>
+    </>
+  );
+}
