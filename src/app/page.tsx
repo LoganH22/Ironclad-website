@@ -58,9 +58,22 @@ const PROOF_POINTS = [
 export default function Home() {
   return (
     <>
-      <section className="border-b border-border bg-navy">
-        <Container className="grid gap-12 py-20 md:grid-cols-2 md:items-center md:py-28">
-          <Reveal>
+      <section className="relative overflow-hidden border-b border-border bg-navy">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-wave.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="scale-110 object-cover opacity-20 blur-[2px]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/95 to-navy/80" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/40" />
+        </div>
+
+        <Container className="relative py-24 md:py-32">
+          <Reveal className="max-w-2xl">
             <Eyebrow light>Financial &amp; Management Consulting</Eyebrow>
             <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl">
               Financial guidance as solid{" "}
@@ -77,24 +90,6 @@ export default function Home() {
                 Our Services
               </Button>
             </div>
-          </Reveal>
-
-          <Reveal delay={120} className="relative">
-            <div className="relative ml-auto aspect-[4/5] w-full max-w-md overflow-hidden border border-white/15">
-              <Image
-                src="/images/hero-wave.jpg"
-                alt=""
-                fill
-                priority
-                sizes="(min-width: 768px) 28rem, 100vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-navy/10 to-transparent" />
-            </div>
-            <div
-              aria-hidden="true"
-              className="absolute -bottom-4 -left-4 hidden h-16 w-16 border-b border-l border-brass/60 md:block"
-            />
           </Reveal>
         </Container>
       </section>
@@ -122,7 +117,7 @@ export default function Home() {
             alt=""
             fill
             sizes="100vw"
-            className="object-cover opacity-25"
+            className="scale-110 object-cover opacity-15 blur-[2px]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy-soft/90 to-navy/95" />
         </div>

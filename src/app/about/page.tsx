@@ -50,7 +50,7 @@ export default function AboutPage() {
             alt=""
             fill
             sizes="100vw"
-            className="object-cover opacity-30"
+            className="scale-110 object-cover opacity-20 blur-[2px]"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy-soft/92 to-navy/95" />
         </div>
