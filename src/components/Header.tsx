@@ -26,8 +26,8 @@ export default function Header() {
           <Image
             src="/logo/01-lockup-horizontal.svg"
             alt="Ironclad Consulting Group"
-            width={150}
-            height={34}
+            width={194}
+            height={44}
             priority
           />
         </Link>
