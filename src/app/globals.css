@@ -2,8 +2,10 @@
 
 :root {
   --color-ink: #14181f;
-  --color-navy: #0e1524;
-  --color-navy-soft: #1a2338;
+  --color-navy: #16223a;
+  --color-navy-soft: #202f4d;
+  --color-steel: #6e7783;
+  --color-mist: #a9b2bc;
   --color-brass: #a8611d;
   --color-brass-soft: #c17a35;
   --color-on-brass: #fffaf3;
@@ -14,7 +16,7 @@
   --color-muted: #f0ece3;
   --color-muted-foreground: #57534e;
   --color-border: #e3ded2;
-  --color-ring: #0e1524;
+  --color-ring: #16223a;
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
@@ -27,6 +29,8 @@
   --color-ink: var(--color-ink);
   --color-navy: var(--color-navy);
   --color-navy-soft: var(--color-navy-soft);
+  --color-steel: var(--color-steel);
+  --color-mist: var(--color-mist);
   --color-brass: var(--color-brass);
   --color-brass-soft: var(--color-brass-soft);
   --color-on-brass: var(--color-on-brass);

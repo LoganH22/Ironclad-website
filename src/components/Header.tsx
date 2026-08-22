@@ -22,24 +22,14 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-paper/90 backdrop-blur">
       <Container className="flex h-18 items-center justify-between py-3">
-        <Link
-          href="/"
-          className="flex items-center gap-3 font-heading text-lg font-semibold tracking-tight text-ink"
-        >
+        <Link href="/" className="flex items-center">
           <Image
-            src="/images/logo-badge.png"
-            alt=""
-            width={34}
+            src="/logo/01-lockup-horizontal.svg"
+            alt="Ironclad Consulting Group"
+            width={150}
             height={34}
-            className="rounded-sm"
             priority
           />
-          <span>
-            Ironclad{" "}
-            <span className="font-normal text-muted-foreground">
-              Consulting Group
-            </span>
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

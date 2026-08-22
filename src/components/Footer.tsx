@@ -22,11 +22,10 @@ export default function Footer() {
             className="flex items-center gap-3 font-heading text-lg font-semibold text-white"
           >
             <Image
-              src="/images/logo-badge.png"
+              src="/logo/06-mark-white-reverse.svg"
               alt=""
-              width={32}
-              height={32}
-              className="rounded-sm"
+              width={30}
+              height={30}
             />
             Ironclad Consulting Group
           </Link>
