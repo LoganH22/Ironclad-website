@@ -77,10 +77,16 @@ export default function Footer() {
         </div>
       </Container>
 
-      <Container className="border-t border-white/10 py-6">
+      <Container className="flex flex-col items-start gap-3 border-t border-white/10 py-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-white/40">
           © {year} Ironclad Consulting Group, LLC. All rights reserved.
         </p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html:
+              '<div google-add-preferred-source-btn data-theme="dark"></div>',
+          }}
+        />
       </Container>
     </footer>
   );
