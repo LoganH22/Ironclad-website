@@ -15,7 +15,7 @@ export default function ContactForm() {
     const body = encodeURIComponent(
       `${message}\n\n— ${name} (${email})`
     );
-    window.location.href = `mailto:hello@ironcladconsultinggroup.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@ironcladconsultinggroup.net?subject=${subject}&body=${body}`;
     setSent(true);
   }
 
@@ -90,10 +90,10 @@ export default function ContactForm() {
           Opening your email client to send this along, if it didn&apos;t
           open, email us directly at{" "}
           <a
-            href="mailto:hello@ironcladconsultinggroup.com"
+            href="mailto:info@ironcladconsultinggroup.net"
             className="font-medium text-ink underline underline-offset-2"
           >
-            hello@ironcladconsultinggroup.com
+            info@ironcladconsultinggroup.net
           </a>
           .
         </p>

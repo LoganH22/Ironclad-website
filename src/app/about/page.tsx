@@ -13,8 +13,16 @@ export const metadata: Metadata = {
 };
 
 const FOUNDERS = [
-  { name: "Logan Hostetter", role: "Co-Founder" },
-  { name: "Matt Welsey", role: "Co-Founder" },
+  {
+    name: "Logan Hostetter",
+    role: "Co-Founder",
+    email: "loganh@ironcladconsultinggroup.net",
+  },
+  {
+    name: "Matt Welsey",
+    role: "Co-Founder",
+    email: "mattw@ironcladconsultinggroup.net",
+  },
 ];
 
 export default function AboutPage() {
@@ -130,6 +138,12 @@ export default function AboutPage() {
                 <p className="text-sm text-muted-foreground">
                   {founder.role}
                 </p>
+                <a
+                  href={`mailto:${founder.email}`}
+                  className="mt-2 inline-block text-sm text-ink underline underline-offset-2 transition-colors duration-160 hover:text-brass"
+                >
+                  {founder.email}
+                </a>
               </Reveal>
             ))}
           </div>

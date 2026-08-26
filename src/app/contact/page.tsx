@@ -27,10 +27,10 @@ export default function ContactPage() {
           <p className="mt-8 text-sm text-muted-foreground">
             Prefer email?{" "}
             <a
-              href="mailto:hello@ironcladconsultinggroup.com"
+              href="mailto:info@ironcladconsultinggroup.net"
               className="font-medium text-ink underline underline-offset-2"
             >
-              hello@ironcladconsultinggroup.com
+              info@ironcladconsultinggroup.net
             </a>
           </p>
         </Reveal>

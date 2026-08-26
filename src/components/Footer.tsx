@@ -57,10 +57,10 @@ export default function Footer() {
             Get in touch
           </div>
           <a
-            href="mailto:hello@ironcladconsultinggroup.com"
+            href="mailto:info@ironcladconsultinggroup.net"
             className="group mt-4 inline-flex items-center gap-1.5 text-sm text-white/70 transition-colors duration-160 hover:text-white"
           >
-            hello@ironcladconsultinggroup.com
+            info@ironcladconsultinggroup.net
             <ArrowUpRightIcon className="size-3.5 transition-transform duration-220 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <p className="mt-4 text-sm text-white/50">Pennsylvania, USA</p>
