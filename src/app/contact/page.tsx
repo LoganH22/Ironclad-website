@@ -5,9 +5,9 @@ import Eyebrow from "@/components/Eyebrow";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact | Ironclad Consulting Group",
+  title: "Contact | Ironclad Consulting Group – Lancaster, PA",
   description:
-    "Get in touch with Ironclad Consulting Group for cash flow tracking, budgeting, valuation, and management advisory services.",
+    "Get in touch with Ironclad Consulting Group in Lancaster, PA for cash flow tracking, budgeting, valuation, and management advisory services.",
 };
 
 export default function ContactPage() {
@@ -31,6 +31,15 @@ export default function ContactPage() {
               className="font-medium text-ink underline underline-offset-2"
             >
               info@ironcladconsultinggroup.net
+            </a>
+          </p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Prefer to call?{" "}
+            <a
+              href="tel:+17179458210"
+              className="font-medium text-ink underline underline-offset-2"
+            >
+              (717) 945-8210
             </a>
           </p>
         </Reveal>

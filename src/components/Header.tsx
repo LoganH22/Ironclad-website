@@ -5,7 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Container from "./Container";
-import { MenuIcon, CloseIcon } from "./icons";
+import { MenuIcon, CloseIcon, PhoneIcon } from "./icons";
+
+const PHONE = "(717) 945-8210";
+const PHONE_HREF = "+17179458210";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -58,12 +61,21 @@ export default function Header() {
           })}
         </nav>
 
-        <Link
-          href="/contact"
-          className="hidden border border-ink/20 px-4 py-2 text-sm font-semibold text-ink transition-colors duration-160 hover:border-ink hover:bg-ink hover:text-paper md:inline-block cursor-pointer"
-        >
-          Get a Consultation
-        </Link>
+        <div className="hidden items-center gap-5 md:flex">
+          <a
+            href={`tel:${PHONE_HREF}`}
+            className="hidden items-center gap-1.5 text-sm font-medium text-ink/80 transition-colors duration-160 hover:text-ink lg:flex"
+          >
+            <PhoneIcon className="size-4 text-brass" />
+            {PHONE}
+          </a>
+          <Link
+            href="/contact"
+            className="border border-ink/20 px-4 py-2 text-sm font-semibold text-ink transition-colors duration-160 hover:border-ink hover:bg-ink hover:text-paper cursor-pointer"
+          >
+            Get a Consultation
+          </Link>
+        </div>
 
         <button
           type="button"
@@ -100,6 +112,13 @@ export default function Header() {
             >
               Get a Consultation
             </Link>
+            <a
+              href={`tel:${PHONE_HREF}`}
+              className="mt-3 flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-ink"
+            >
+              <PhoneIcon className="size-4 text-brass" />
+              {PHONE}
+            </a>
           </Container>
         </div>
       </div>

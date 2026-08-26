@@ -13,9 +13,9 @@ import {
 } from "@/components/icons";
 
 export const metadata: Metadata = {
-  title: "Services | Ironclad Consulting Group",
+  title: "Services | Ironclad Consulting Group – Lancaster, PA",
   description:
-    "Cash flow tracking, budget building, business valuation, and management advisory services from Ironclad Consulting Group.",
+    "Cash flow tracking, budget building, business valuation, and management advisory services from Ironclad Consulting Group in Lancaster, PA.",
 };
 
 const SERVICES = [

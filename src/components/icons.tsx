@@ -149,6 +149,23 @@ export function MenuIcon({ className = "size-6" }: IconProps) {
   );
 }
 
+export function PhoneIcon({ className = "size-4" }: IconProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M6.5 4h3l1.5 4-2 1.5a11 11 0 0 0 5.5 5.5L16 13l4 1.5v3a2 2 0 0 1-2 2C10.5 19.5 4.5 13.5 4.5 6a2 2 0 0 1 2-2z" />
+    </svg>
+  );
+}
+
 export function ArrowUpRightIcon({ className = "size-4" }: IconProps) {
   return (
     <svg

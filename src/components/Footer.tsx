@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import Container from "./Container";
-import { ArrowUpRightIcon } from "./icons";
+import { ArrowUpRightIcon, PhoneIcon } from "./icons";
+
+const PHONE = "(717) 945-8210";
+const PHONE_HREF = "+17179458210";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -63,7 +66,14 @@ export default function Footer() {
             info@ironcladconsultinggroup.net
             <ArrowUpRightIcon className="size-3.5 transition-transform duration-220 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
-          <p className="mt-4 text-sm text-white/50">Pennsylvania, USA</p>
+          <a
+            href={`tel:${PHONE_HREF}`}
+            className="mt-3 flex w-fit items-center gap-1.5 text-sm text-white/70 transition-colors duration-160 hover:text-white"
+          >
+            <PhoneIcon className="size-3.5" />
+            {PHONE}
+          </a>
+          <p className="mt-4 text-sm text-white/50">Lancaster, PA</p>
         </div>
       </Container>
 

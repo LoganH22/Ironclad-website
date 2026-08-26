@@ -18,13 +18,39 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Ironclad Consulting Group | Financial & Management Consulting",
+  title:
+    "Ironclad Consulting Group | Financial & Management Consulting in Lancaster, PA",
   description:
-    "Ironclad Consulting Group provides cash flow tracking, budget building, business valuation, and management advisory services for growing businesses.",
+    "Ironclad Consulting Group provides cash flow tracking, budget building, business valuation, and management advisory services for growing businesses in Lancaster, PA and beyond.",
 };
 
 export const viewport: Viewport = {
   themeColor: "#0e1524",
+};
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  name: "Ironclad Consulting Group",
+  description:
+    "Financial and management consulting: cash flow tracking, budget building, business valuation, and management advisory.",
+  url: "https://ironcladconsultinggroup.net",
+  telephone: "+1-717-945-8210",
+  email: "info@ironcladconsultinggroup.net",
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "Lancaster County, PA",
+  },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Lancaster",
+    addressRegion: "PA",
+    addressCountry: "US",
+  },
+  founder: [
+    { "@type": "Person", name: "Logan Hostetter" },
+    { "@type": "Person", name: "Matt Welsey" },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -34,6 +60,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${publicSans.variable} ${newsreader.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

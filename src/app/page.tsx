@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
@@ -10,6 +11,13 @@ import {
   ShieldIcon,
   QuoteIcon,
 } from "@/components/icons";
+
+export const metadata: Metadata = {
+  title:
+    "Ironclad Consulting Group | Financial & Management Consulting in Lancaster, PA",
+  description:
+    "Ironclad Consulting Group helps growing businesses in Lancaster, PA track cash flow, build real budgets, understand what they're worth, and make sound management decisions.",
+};
 
 const SERVICES = [
   {
@@ -80,9 +88,10 @@ export default function Home() {
               <span className="italic text-brass-soft">as the name.</span>
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/70">
-              Ironclad Consulting Group helps growing businesses track cash
-              flow, build real budgets, understand what they&apos;re worth,
-              and make sound management decisions.
+              Ironclad Consulting Group helps growing businesses across
+              Lancaster County track cash flow, build real budgets,
+              understand what they&apos;re worth, and make sound management
+              decisions.
             </p>
             <div className="mt-9 flex flex-wrap gap-4">
               <Button href="/contact">Get a Consultation</Button>
