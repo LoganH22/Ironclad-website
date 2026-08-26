@@ -17,11 +17,15 @@ const FOUNDERS = [
     name: "Logan Hostetter",
     role: "Co-Founder",
     email: "loganh@ironcladconsultinggroup.net",
+    phone: "(717) 945-8210",
+    phoneHref: "+17179458210",
   },
   {
     name: "Matt Welsey",
     role: "Co-Founder",
     email: "mattw@ironcladconsultinggroup.net",
+    phone: "(609) 234-7315",
+    phoneHref: "+16092347315",
   },
 ];
 
@@ -140,9 +144,15 @@ export default function AboutPage() {
                 </p>
                 <a
                   href={`mailto:${founder.email}`}
-                  className="mt-2 inline-block text-sm text-ink underline underline-offset-2 transition-colors duration-160 hover:text-brass"
+                  className="mt-2 block text-sm text-ink underline underline-offset-2 transition-colors duration-160 hover:text-brass"
                 >
                   {founder.email}
+                </a>
+                <a
+                  href={`tel:${founder.phoneHref}`}
+                  className="mt-1 block text-sm text-ink underline underline-offset-2 transition-colors duration-160 hover:text-brass"
+                >
+                  {founder.phone}
                 </a>
               </Reveal>
             ))}
