@@ -82,6 +82,7 @@ export default function Footer() {
           © {year} Ironclad Consulting Group, LLC. All rights reserved.
         </p>
         <div
+          className="w-52 shrink-0"
           dangerouslySetInnerHTML={{
             __html:
               '<div google-add-preferred-source-btn data-theme="dark"></div>',
