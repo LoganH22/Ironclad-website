@@ -79,7 +79,13 @@ export default function Footer() {
 
       <Container className="flex flex-col items-start gap-3 border-t border-white/10 py-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-xs text-white/40">
-          © {year} Ironclad Consulting Group, LLC. All rights reserved.
+          © {year} Ironclad Consulting Group, LLC. All rights reserved.{" "}
+          <Link
+            href="/privacy"
+            className="ml-2 underline underline-offset-2 transition-colors duration-160 hover:text-white"
+          >
+            Privacy Policy
+          </Link>
         </p>
         <div
           className="w-52 shrink-0"
