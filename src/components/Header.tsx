@@ -9,6 +9,7 @@ import { MenuIcon, CloseIcon, PhoneIcon } from "./icons";
 
 const PHONE = "(717) 945-8210";
 const PHONE_HREF = "+17179458210";
+const LOGIN_URL = "https://app.ironcladconsultinggroup.net";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -69,6 +70,12 @@ export default function Header() {
             <PhoneIcon className="size-4 text-brass" />
             {PHONE}
           </a>
+          <a
+            href={LOGIN_URL}
+            className="text-sm font-medium text-ink/80 transition-colors duration-160 hover:text-ink"
+          >
+            Client Login
+          </a>
           <Link
             href="/contact"
             className="border border-ink/20 px-4 py-2 text-sm font-semibold text-ink transition-colors duration-160 hover:border-ink hover:bg-ink hover:text-paper cursor-pointer"
@@ -105,6 +112,12 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={LOGIN_URL}
+              className="px-3 py-2 text-base font-medium text-ink hover:bg-muted"
+            >
+              Client Login
+            </a>
             <Link
               href="/contact"
               onClick={close}

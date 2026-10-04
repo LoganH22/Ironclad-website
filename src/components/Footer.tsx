@@ -5,6 +5,7 @@ import { ArrowUpRightIcon, PhoneIcon } from "./icons";
 
 const PHONE = "(717) 945-8210";
 const PHONE_HREF = "+17179458210";
+const LOGIN_URL = "https://app.ironcladconsultinggroup.net";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -52,6 +53,12 @@ export default function Footer() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={LOGIN_URL}
+              className="w-fit text-sm text-white/70 transition-colors duration-160 hover:text-white"
+            >
+              Client Login
+            </a>
           </nav>
         </div>
 
