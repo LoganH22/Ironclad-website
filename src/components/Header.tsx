@@ -72,13 +72,13 @@ export default function Header() {
           </a>
           <a
             href={LOGIN_URL}
-            className="text-sm font-medium text-ink/80 transition-colors duration-160 hover:text-ink"
+            className="border border-ink/20 px-4 py-2 text-sm font-semibold text-ink transition-colors duration-160 hover:border-ink hover:bg-ink hover:text-paper cursor-pointer"
           >
             Client Login
           </a>
           <Link
             href="/contact"
-            className="border border-ink/20 px-4 py-2 text-sm font-semibold text-ink transition-colors duration-160 hover:border-ink hover:bg-ink hover:text-paper cursor-pointer"
+            className="border border-navy-soft bg-navy-soft px-4 py-2 text-sm font-semibold text-white transition-colors duration-160 hover:bg-navy hover:border-navy cursor-pointer"
           >
             Get a Consultation
           </Link>
@@ -114,14 +114,14 @@ export default function Header() {
             ))}
             <a
               href={LOGIN_URL}
-              className="px-3 py-2 text-base font-medium text-ink hover:bg-muted"
+              className="mt-2 border border-ink px-4 py-2 text-center text-sm font-semibold text-ink"
             >
               Client Login
             </a>
             <Link
               href="/contact"
               onClick={close}
-              className="mt-2 border border-ink px-4 py-2 text-center text-sm font-semibold text-ink"
+              className="mt-2 border border-navy-soft bg-navy-soft px-4 py-2 text-center text-sm font-semibold text-white"
             >
               Get a Consultation
             </Link>

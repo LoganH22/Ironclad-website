@@ -55,7 +55,7 @@ export default function Footer() {
             ))}
             <a
               href={LOGIN_URL}
-              className="w-fit text-sm text-white/70 transition-colors duration-160 hover:text-white"
+              className="mt-1 w-fit border border-white/30 px-4 py-2 text-sm font-semibold text-white transition-colors duration-160 hover:bg-white hover:text-navy"
             >
               Client Login
             </a>
