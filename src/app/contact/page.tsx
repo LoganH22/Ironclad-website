@@ -7,7 +7,7 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact | Ironclad Consulting Group – Lancaster, PA",
   description:
-    "Get in touch with Ironclad Consulting Group in Lancaster, PA for cash flow tracking, budgeting, valuation, and management advisory services.",
+    "Get in touch with Ironclad Consulting Group in Lancaster, PA for cash flow tracking, budgeting, valuation, and management consulting services.",
 };
 
 export default function ContactPage() {

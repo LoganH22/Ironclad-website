@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Services | Ironclad Consulting Group – Lancaster, PA",
   description:
-    "Cash flow tracking, budget building, business valuation, and management advisory services from Ironclad Consulting Group in Lancaster, PA.",
+    "Cash flow tracking, budget building, business valuation, and management consulting services from Ironclad Consulting Group in Lancaster, PA.",
 };
 
 const SERVICES = [
@@ -54,11 +54,11 @@ const SERVICES = [
   },
   {
     icon: CompassIcon,
-    title: "Management Advisory",
+    title: "Management Consulting",
     description:
       "Hands-on advice on the operating decisions that shape your business, from an outside perspective that isn't guessing.",
     items: [
-      "Ongoing advisory relationship, not one-off reports",
+      "Ongoing consulting relationship, not one-off reports",
       "Practical recommendations, not just analysis",
       "Support through key decision points",
     ],
@@ -109,7 +109,7 @@ const TIERS = [
     description:
       "Growth, plus the big-decision work: what the business is worth and where it's headed.",
     includesLabel: "Everything in Silver, plus",
-    includes: ["Business valuation", "Growth planning", "Sale / acquisition advisory"],
+    includes: ["Business valuation", "Growth planning", "Sale / acquisition support"],
     bands: null,
   },
 ];

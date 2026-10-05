@@ -49,7 +49,7 @@ export default function AboutPage() {
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
               We work with businesses that need more than a once-a-year
               spreadsheet review, help with cash flow tracking, budgeting,
-              valuation, and the kind of management advisory that comes from
+              valuation, and the kind of management consulting that comes from
               actually understanding how a business runs day to day.
             </p>
           </Container>

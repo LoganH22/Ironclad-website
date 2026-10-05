@@ -40,7 +40,7 @@ const SERVICES = [
   },
   {
     icon: CompassIcon,
-    title: "Management Advisory",
+    title: "Management Consulting",
     description:
       "Hands-on guidance for the operating decisions that shape where your business is headed.",
   },

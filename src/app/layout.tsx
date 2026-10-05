@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title:
     "Ironclad Consulting Group | Financial & Management Consulting in Lancaster, PA",
   description:
-    "Ironclad Consulting Group provides cash flow tracking, budget building, business valuation, and management advisory services for growing businesses in Lancaster, PA and beyond.",
+    "Ironclad Consulting Group provides cash flow tracking, budget building, business valuation, and management consulting services for growing businesses in Lancaster, PA and beyond.",
 };
 
 export const viewport: Viewport = {
@@ -34,7 +34,7 @@ const businessSchema = {
   "@type": "FinancialService",
   name: "Ironclad Consulting Group",
   description:
-    "Financial and management consulting: cash flow tracking, budget building, business valuation, and management advisory.",
+    "Financial and management consulting: cash flow tracking, budget building, business valuation, and hands-on operating guidance.",
   url: "https://ironcladconsultinggroup.net",
   telephone: "+1-717-945-8210",
   email: "info@ironcladconsultinggroup.net",
