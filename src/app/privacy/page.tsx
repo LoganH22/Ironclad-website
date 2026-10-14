@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
 };
 
-const LAST_UPDATED = "October 4, 2026";
+const LAST_UPDATED = "October 13, 2026";
 
 const link = "font-medium text-ink underline underline-offset-2";
 
@@ -48,9 +48,10 @@ export default function PrivacyPage() {
           </p>
           <p>
             <strong className="text-foreground">Dashboard clients.</strong> Our
-            clients can sign in to a private dashboard. We collect the email address
-            used to sign in and, if you choose to connect a business bank account,
-            the financial information described below.
+            clients can sign in to a private dashboard. Accounts are created by
+            invitation only. We collect the email address used to sign in and, if
+            you choose to connect a business bank account or your accounting
+            software, the financial information described below.
           </p>
         </Section>
 
@@ -94,25 +95,39 @@ export default function PrivacyPage() {
 
         <Section title="Who can see your data">
           <p>
-            Dashboard data is visible only to the people at your company who have a
-            login and to the Ironclad consultants assigned to your account. We share
-            information with service providers who help us run the dashboard (for
-            example, Plaid for bank connections, our database and hosting providers,
-            and our email delivery provider), only as needed to provide the service.
-            We may also disclose information when required by law.
+            Dashboard data is visible to the people at your company who have a
+            login. Our consultants can see your company&rsquo;s data only while you
+            allow it: access for our consultants starts switched off for every new
+            client company, and your team can switch it on or off at any time from
+            the dashboard&rsquo;s Privacy &amp; access page. While it is off, our
+            consultants&rsquo; logins cannot read your accounts, transactions,
+            budgets, or settings. Each change to this setting is recorded.
+          </p>
+          <p>
+            We share information with service providers who help us run the
+            dashboard (for example, Plaid for bank connections, our database and
+            hosting providers, and our email delivery provider), only as needed to
+            provide the service. We may also disclose information when required by
+            law.
           </p>
         </Section>
 
         <Section title="How we protect it">
           <ul className="list-disc space-y-2 pl-5">
             <li>Information is encrypted in transit between your browser and our systems.</li>
+            <li>Information stored in our database is encrypted at rest.</li>
             <li>
               The secure connection credentials we receive from Plaid are encrypted
               before they are stored and are never sent to your browser.
             </li>
             <li>
-              Access is invitation-only, requires a login, and is limited so that each
-              company can see only its own data.
+              Access is invitation-only. Every sign-in requires a password and a
+              one-time code from an authenticator app, and each company can see only
+              its own data.
+            </li>
+            <li>
+              Our systems are scanned automatically every week for known
+              vulnerabilities and for accidentally exposed secrets.
             </li>
           </ul>
           <p>
@@ -124,9 +139,17 @@ export default function PrivacyPage() {
         <Section title="Retention and deletion">
           <p>
             We keep dashboard data for as long as you are a client and use the
-            dashboard. You can ask us at any time to disconnect your bank account and
-            delete your data, and we will do so within 30 days, except where we are
-            required by law to keep certain records. Email{" "}
+            dashboard. You can disconnect your bank account yourself at any time
+            from the dashboard: this immediately ends Plaid&rsquo;s access and
+            deletes the imported accounts and transactions. QuickBooks can be
+            disconnected the same way from the Advanced Analytics page.
+          </p>
+          <p>
+            You can also ask us to delete the rest of your data (budgets, settings,
+            and your login), and we will do so within 30 days, except where we are
+            required by law to keep certain records. Copies held in our internal
+            encrypted exports are replaced on a rolling basis and are gone within 60
+            days. Email{" "}
             <a href="mailto:info@ironcladconsultinggroup.net" className={link}>
               info@ironcladconsultinggroup.net
             </a>{" "}
