@@ -93,6 +93,12 @@ export default function Footer() {
           >
             Privacy Policy
           </Link>
+          <Link
+            href="/terms"
+            className="ml-3 underline underline-offset-2 transition-colors duration-160 hover:text-white"
+          >
+            Terms of Use
+          </Link>
         </p>
         <div
           className="w-52 shrink-0"
