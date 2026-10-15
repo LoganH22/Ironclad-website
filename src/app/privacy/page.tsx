@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
 };
 
-const LAST_UPDATED = "October 13, 2026";
+const LAST_UPDATED = "October 15, 2026";
 
 const link = "font-medium text-ink underline underline-offset-2";
 
@@ -51,7 +51,8 @@ export default function PrivacyPage() {
             clients can sign in to a private dashboard. Accounts are created by
             invitation only. We collect the email address used to sign in and, if
             you choose to connect a business bank account or your accounting
-            software, the financial information described below.
+            software, the financial information described below. We also record
+            that you accepted our terms, and when.
           </p>
         </Section>
 
