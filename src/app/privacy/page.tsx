@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
 };
 
-const LAST_UPDATED = "October 15, 2026";
+const LAST_UPDATED = "October 20, 2026";
 
 const link = "font-medium text-ink underline underline-offset-2";
 
@@ -45,6 +45,12 @@ export default function PrivacyPage() {
             <strong className="text-foreground">Website visitors.</strong> If you
             contact us through our website, we receive the details you give us, such
             as your name, email address, phone number, and message.
+          </p>
+          <p>
+            <strong className="text-foreground">Demo requests.</strong> If you
+            request a demo of our dashboard, we receive the name, email address,
+            phone number, and company name you enter, and we use them to contact
+            you about the demo.
           </p>
           <p>
             <strong className="text-foreground">Dashboard clients.</strong> Our
