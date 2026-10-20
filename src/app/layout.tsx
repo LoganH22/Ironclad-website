@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Public_Sans, Newsreader } from "next/font/google";
 import Script from "next/script";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           src="https://news.google.com/swg/js/v1/publisher.js"
           strategy="afterInteractive"
         />
+        <AnnouncementBar />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
