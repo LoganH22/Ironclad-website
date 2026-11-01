@@ -75,11 +75,6 @@ const TIERS = [
       "A one-time books cleanup and working budget — gets a disorganized set of books into shape.",
     includesLabel: "What's included",
     includes: ["Full books cleanup & reconciliation", "Initial budget build"],
-    bands: [
-      { label: "Low (<50 tx/mo)", value: "$600–1,200" },
-      { label: "Medium (50–250 tx/mo)", value: "$1,200–2,000", typical: true },
-      { label: "High (250+ tx/mo)", value: "$2,000+" },
-    ],
   },
   {
     metal: "Silver",
@@ -95,11 +90,6 @@ const TIERS = [
       "Cash flow tracking",
       "Quarterly check-ins",
     ],
-    bands: [
-      { label: "Low (<50 tx/mo)", value: "$800–1,600" },
-      { label: "Medium (50–250 tx/mo)", value: "$1,600–2,200", typical: true },
-      { label: "High (250+ tx/mo)", value: "$2,200–2,800" },
-    ],
   },
   {
     metal: "Gold",
@@ -110,7 +100,6 @@ const TIERS = [
       "Growth, plus the big-decision work: what the business is worth and where it's headed.",
     includesLabel: "Everything in Silver, plus",
     includes: ["Business valuation", "Growth planning", "Sale / acquisition support"],
-    bands: null,
   },
 ];
 
@@ -175,12 +164,12 @@ export default function ServicesPage() {
           <Reveal className="max-w-2xl">
             <Eyebrow>Investment</Eyebrow>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-foreground">
-              Straightforward pricing
+              Pricing that fits your business
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Three tiers, priced by transaction volume and complexity, not a
-              percentage of revenue. Each tier includes everything in the one
-              before it.
+              Three tiers, scoped to your business rather than a percentage of
+              revenue. Each tier includes everything in the one before it, and
+              every engagement is quoted individually.
             </p>
           </Reveal>
 
@@ -196,11 +185,9 @@ export default function ServicesPage() {
                   style={{ backgroundColor: tier.accent }}
                 />
 
-                <span
-                  className="w-fit text-xs font-bold uppercase tracking-[0.16em]"
-                  style={{ color: tier.accent }}
-                >
-                  {tier.metal}
+                <span className="w-fit text-xs font-bold uppercase tracking-[0.16em]">
+                  <span style={{ color: tier.accent }}>{tier.metal}</span>
+                  <span className="font-semibold text-muted-foreground"> · {tier.cadence}</span>
                 </span>
                 <h3 className="mt-3 font-heading text-2xl font-semibold text-foreground">
                   {tier.name}
@@ -208,36 +195,6 @@ export default function ServicesPage() {
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {tier.description}
                 </p>
-
-                <div className="mt-6 border-y border-border py-4">
-                  <div className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                    {tier.cadence}
-                  </div>
-                  {tier.bands ? (
-                    <div className="mt-3 space-y-1.5">
-                      {tier.bands.map((band) => (
-                        <div
-                          key={band.label}
-                          className={`flex items-baseline justify-between px-2.5 py-1.5 ${
-                            band.typical ? "bg-muted" : ""
-                          }`}
-                        >
-                          <span className="text-xs text-muted-foreground">
-                            {band.label}
-                          </span>
-                          <span className="font-heading font-tabular text-sm font-semibold text-foreground">
-                            {band.value}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="mt-2 text-sm text-foreground">
-                      Scoped individually based on your business —
-                      let&apos;s talk.
-                    </p>
-                  )}
-                </div>
 
                 <div className="mt-6">
                   <div className="text-xs font-semibold uppercase tracking-wide text-foreground">
@@ -262,7 +219,8 @@ export default function ServicesPage() {
           </div>
 
           <p className="mt-8 text-sm text-muted-foreground">
-            Exact pricing depends on your transaction volume and complexity.{" "}
+            Pricing is determined on an individual basis, based on your transaction volume and
+            complexity.{" "}
             <Link href="/contact" className="font-medium text-ink underline underline-offset-2">
               Reach out
             </Link>{" "}
