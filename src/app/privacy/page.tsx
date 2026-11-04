@@ -5,11 +5,11 @@ import Eyebrow from "@/components/Eyebrow";
 export const metadata: Metadata = {
   title: "Privacy Policy | Ironclad Consulting Group – Lancaster, PA",
   description:
-    "How Ironclad Consulting Group collects, uses, protects, and deletes information, including data from connected bank accounts.",
+    "How Ironclad Consulting Group collects, uses, protects, and deletes information, including data from connected bank and credit card accounts.",
   alternates: { canonical: "/privacy" },
 };
 
-const LAST_UPDATED = "October 20, 2026";
+const LAST_UPDATED = "November 4, 2026";
 
 const link = "font-medium text-ink underline underline-offset-2";
 
@@ -56,25 +56,28 @@ export default function PrivacyPage() {
             <strong className="text-foreground">Dashboard clients.</strong> Our
             clients can sign in to a private dashboard. Accounts are created by
             invitation only. We collect the email address used to sign in and, if
-            you choose to connect a business bank account or your accounting
+            you choose to connect a business bank account or credit card, or your accounting
             software, the financial information described below. We also record
             that you accepted our terms, and when.
           </p>
         </Section>
 
-        <Section title="Connected bank accounts">
+        <Section title="Connected bank and credit card accounts">
           <p>
             To show you your cash position, money in and out, and budgets, the
-            dashboard connects to your bank through Plaid Inc. (&ldquo;Plaid&rdquo;).
+            dashboard connects to your bank or card issuer through Plaid Inc. (&ldquo;Plaid&rdquo;).
             You sign in on Plaid&rsquo;s secure screen, so your bank username and
-            password are given to Plaid and your bank. They are never seen or stored
-            by Ironclad.
+            password are given to Plaid and your bank or card issuer. They are never
+            seen or stored by Ironclad.
           </p>
           <p>
             Through Plaid we receive the account name, the last four digits of the
-            account number, balances, and transaction details (date, description,
-            amount, and category). We do not receive full account numbers or your
-            bank login details. By connecting an account, you also agree to
+            account number, balances (for a credit card, the amount owed), and
+            transaction details (date, description, amount, and category). We do not receive full account numbers or your
+            bank login details. If an account can&rsquo;t be connected, you may
+            instead upload a statement file (CSV) exported from your bank or card
+            issuer; we store the transactions in that file the same way, and not the
+            file itself. By connecting an account, you also agree to
             Plaid&rsquo;s handling of your information as described in the{" "}
             <a
               href="https://plaid.com/legal/#end-user-privacy-policy"
@@ -146,9 +149,10 @@ export default function PrivacyPage() {
         <Section title="Retention and deletion">
           <p>
             We keep dashboard data for as long as you are a client and use the
-            dashboard. You can disconnect your bank account yourself at any time
+            dashboard. You can disconnect your bank and card accounts yourself at any time
             from the dashboard: this immediately ends Plaid&rsquo;s access and
-            deletes the imported accounts and transactions. QuickBooks can be
+            deletes the imported accounts and transactions, including any accounts you
+            added by uploading statements. QuickBooks can be
             disconnected the same way from the Advanced Analytics page.
           </p>
           <p>
