@@ -6,6 +6,10 @@ import type { Metadata } from "next";
 export const SITE_URL = "https://www.ironcladconsultinggroup.net";
 export const SITE_NAME = "Ironclad Consulting Group";
 
+// Where the client dashboard lives: sign-in, and the demo request form.
+export const LOGIN_URL = "https://app.ironcladconsultinggroup.net";
+export const DEMO_URL = `${LOGIN_URL}/demo`;
+
 // The services the site describes, for the business listing data search
 // engines read. Keep in step with the Services page.
 export const SERVICES = [

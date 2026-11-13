@@ -10,6 +10,7 @@ const LOGIN_URL = "https://app.ironcladconsultinggroup.net";
 const NAV_LINKS = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/dashboard", label: "Dashboard" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
