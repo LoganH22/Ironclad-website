@@ -11,12 +11,14 @@ import {
   CompassIcon,
   CheckIcon,
 } from "@/components/icons";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Services | Ironclad Consulting Group – Lancaster, PA",
   description:
     "Cash flow tracking, budget building, business valuation, and management consulting services from Ironclad Consulting Group in Lancaster, PA.",
-};
+  path: "/services",
+});
 
 const SERVICES = [
   {

@@ -11,13 +11,14 @@ import {
   ShieldIcon,
   QuoteIcon,
 } from "@/components/icons";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title:
-    "Ironclad Consulting Group | Financial & Management Consulting in Lancaster, PA",
+export const metadata: Metadata = pageMetadata({
+  title: "Financial & Management Consulting in Lancaster, PA | Ironclad",
   description:
-    "Ironclad Consulting Group helps growing businesses in Lancaster, PA track cash flow, build real budgets, understand what they're worth, and make sound management decisions.",
-};
+    "Financial and management consulting for growing Lancaster, PA businesses: cash flow tracking, real budgets, business valuation, and hands-on guidance.",
+  path: "/",
+});
 
 const SERVICES = [
   {

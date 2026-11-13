@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Privacy Policy | Ironclad Consulting Group – Lancaster, PA",
   description:
     "How Ironclad Consulting Group collects, uses, protects, and deletes information, including data from connected bank and credit card accounts.",
-  alternates: { canonical: "/privacy" },
-};
+  path: "/privacy",
+});
 
 const LAST_UPDATED = "November 4, 2026";
 

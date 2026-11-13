@@ -1,14 +1,10 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
-const BASE_URL = "https://ironcladconsultinggroup.net";
-
+// Search engines ignore the change-frequency and priority hints, and a
+// "last modified" date that is really just the build time is misleading, so
+// the sitemap lists only the pages.
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/services", "/about", "/contact", "/privacy", "/terms"];
-
-  return routes.map((route) => ({
-    url: `${BASE_URL}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: route === "" ? 1 : 0.8,
-  }));
+  return routes.map((route) => ({ url: `${SITE_URL}${route}` }));
 }

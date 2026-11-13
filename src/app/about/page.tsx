@@ -5,12 +5,14 @@ import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import Eyebrow from "@/components/Eyebrow";
 import { ShieldIcon, IroncladShipIcon } from "@/components/icons";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About | Ironclad Consulting Group – Lancaster, PA",
   description:
     "Ironclad Consulting Group is a Lancaster, PA-based financial and management consulting firm founded by Logan Hostetter and Matt Welsey.",
-};
+  path: "/about",
+});
 
 const FOUNDERS = [
   {

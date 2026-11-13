@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/Container";
 import Eyebrow from "@/components/Eyebrow";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Terms of Use | Ironclad Consulting Group – Lancaster, PA",
   description:
-    "The terms for using the Ironclad client dashboard, including connecting bank and accounting accounts.",
-  alternates: { canonical: "/terms" },
-};
+    "The terms for using the Ironclad Consulting Group client dashboard, including connecting bank and accounting accounts, and the limits of what we promise.",
+  path: "/terms",
+});
 
 const LAST_UPDATED = "October 13, 2026";
 

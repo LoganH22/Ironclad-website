@@ -3,12 +3,14 @@ import Container from "@/components/Container";
 import Reveal from "@/components/Reveal";
 import Eyebrow from "@/components/Eyebrow";
 import ContactForm from "@/components/ContactForm";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact | Ironclad Consulting Group – Lancaster, PA",
   description:
     "Get in touch with Ironclad Consulting Group in Lancaster, PA for cash flow tracking, budgeting, valuation, and management consulting services.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

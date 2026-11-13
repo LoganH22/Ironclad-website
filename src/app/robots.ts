@@ -1,11 +1,14 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
+      // The contact form's server endpoint isn't a page.
+      disallow: ["/api/"],
     },
-    sitemap: "https://ironcladconsultinggroup.net/sitemap.xml",
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }
